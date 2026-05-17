@@ -1,0 +1,22 @@
+.env
+*.env
+.env.*
+!.env.example
+*.key
+*.pem
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.venv/
+venv/
+env/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Client data — never commit real client configs or active client state
+agents/*/src/config/clients/*.json
+!agents/*/src/config/clients/_template.json
+agents/*/src/config/active_client.json

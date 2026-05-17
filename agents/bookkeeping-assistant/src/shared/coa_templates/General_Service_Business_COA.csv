@@ -1,0 +1,43 @@
+Account Number,Account Name,Account Type,Detail Type,Description
+1000,Checking Account,Bank,Checking,Primary operating checking account
+1010,Savings Account,Bank,Savings,Business savings account
+1020,Petty Cash,Bank,Cash on hand,Cash on hand for minor expenses
+1100,Accounts Receivable,Accounts Receivable (A/R),Accounts Receivable,Amounts owed by clients for services delivered
+1200,Undeposited Funds,Other Current Asset,Undeposited Funds,Payments received not yet deposited
+1300,Prepaid Expenses,Other Current Asset,Prepaid Expenses,Expenses paid in advance
+1400,Other Current Assets,Other Current Asset,Other Current Assets,Miscellaneous short-term assets
+1500,Equipment,Fixed Asset,Fixed Asset Other Tools Equipment,Owned equipment used in operations
+1510,Accumulated Depreciation - Equipment,Fixed Asset,Accumulated Depreciation,Contra-asset for equipment depreciation
+1600,Computer Equipment,Fixed Asset,Fixed Asset Computers,Computers and technology hardware
+1610,Accumulated Depreciation - Computer Equipment,Fixed Asset,Accumulated Depreciation,Contra-asset for computer equipment depreciation
+1900,Security Deposits,Other Asset,Security Deposits,Refundable deposits paid to landlords or vendors
+2000,Accounts Payable,Accounts Payable (A/P),Accounts Payable,Amounts owed to vendors and suppliers
+2100,Credit Card Payable,Credit Card,Credit Card,Business credit card balance
+2200,Accrued Liabilities,Other Current Liability,Other Current Liabilities,Expenses incurred but not yet paid
+2300,Sales Tax Payable,Other Current Liability,Sales Tax Payable,Sales tax collected awaiting remittance
+2400,Payroll Tax Payable,Other Current Liability,Payroll Tax Payable,Payroll taxes withheld and employer portion owed
+2500,Short-Term Loan Payable,Other Current Liability,Loan Payable,Current portion of loans due within 12 months
+2700,Long-Term Debt,Long Term Liability,Notes Payable,Loans and financing due beyond 12 months
+3000,Owner's Equity,Equity,Owner's Equity,Owner's capital contributions and equity balance
+3100,Owner's Draw,Equity,Owner's Equity,Withdrawals by the owner
+3900,Retained Earnings,Equity,Retained Earnings,Accumulated net income retained in the business
+3950,Opening Balance Equity,Equity,Opening Balance Equity,Temporary account used during initial QBO setup
+4000,Service Revenue,Income,Service/Fee Income,Revenue from primary service delivery
+4100,Other Revenue,Income,Other Primary Income,Revenue from secondary or ancillary services
+4900,Other Income,Other Income,Other Miscellaneous Income,Non-operating income
+5000,Cost of Services - Labor,Cost of Goods Sold,Cost of labor - COS,Direct labor costs attributable to client work
+5100,Cost of Services - Other,Cost of Goods Sold,Other Costs of Services - COS,Other direct costs attributable to client work
+6000,Advertising & Marketing,Expense,Advertising/Promotional,Digital ads, marketing materials, promotions
+6100,Bank Service Charges,Expense,Bank Charges,Bank fees, wire fees, ACH fees, merchant processing fees
+6200,Dues & Subscriptions,Expense,Dues & Subscriptions,Software subscriptions, professional memberships, SaaS tools
+6300,Insurance,Expense,Insurance,Business liability, property, and professional insurance
+6400,Legal & Professional Fees,Expense,Legal & Professional Fees,Attorney, CPA, bookkeeping, and consulting fees
+6500,Meals & Entertainment,Expense,Entertainment Meals,Business meals and client entertainment
+6600,Office Supplies,Expense,Supplies,Office supplies and minor consumables
+6700,Payroll Expenses - W2,Expense,Payroll Expenses,Wages, salaries, and payroll taxes for W2 employees
+6800,Rent & Lease,Expense,Rent or Lease of Buildings,Office rent or workspace lease payments
+6900,Travel,Expense,Travel,Business travel including flights, hotels, transportation
+6950,Utilities,Expense,Utilities,Electricity, internet, phone for business use
+6990,Miscellaneous Expense,Expense,Other Business Expenses,Other business expenses not categorized elsewhere
+7000,Depreciation Expense,Expense,Depreciation,Depreciation on owned assets
+7100,Interest Expense,Expense,Interest Paid,Interest on business loans and credit lines

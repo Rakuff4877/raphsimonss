@@ -1,0 +1,21 @@
+title: ""
+tagline: ""           # one-sentence hook shown on the Notion gallery card
+category: ""          # Research | Customer Support | Data Analysis | Finance | Productivity
+tech_stack: []        # e.g. [Claude, Python, Notion API]
+complexity: ""        # Simple | Medium | Complex
+status: ""            # Live | WIP | Concept
+demo_url: ""
+github_url: ""
+cover_image_url: ""   # optional URL; shown as card thumbnail in Notion gallery
+
+problem: |
+  Describe the business problem this agent solves.
+
+solution: |
+  Explain at a high level how the agent solves it.
+
+architecture: |
+  Key components, tools, APIs, and data flow.
+
+results: |
+  Metrics, time saved, quality improvements, or other measurable impact.

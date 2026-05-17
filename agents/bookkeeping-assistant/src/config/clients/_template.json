@@ -1,0 +1,27 @@
+{
+  "client_name": "{{CLIENT_NAME}}",
+  "drive_root_folder_id": "",
+  "folders": {
+    "admin": "",
+    "intake_transcripts": "",
+    "intake_summaries": "",
+    "intake_structured": "",
+    "coa": "",
+    "client_rules": "",
+    "raw_documents": "",
+    "transactions_normalized": "",
+    "transactions_categorized": "",
+    "transactions_review_required": "",
+    "transactions_qb_upload": "",
+    "reconciliation_outputs": "",
+    "reconciliation_issues": "",
+    "journal_proposed": "",
+    "journal_approved": "",
+    "journal_posted": "",
+    "qb_uploads": "",
+    "meeting_notes": ""
+  },
+  "model": "claude-sonnet-4-6",
+  "industry": "",
+  "coa_template": ""
+}

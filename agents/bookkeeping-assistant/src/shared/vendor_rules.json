@@ -1,0 +1,53 @@
+{
+  "vendor_rules": [
+    {
+      "vendor_pattern": "ADOBE",
+      "account_number": "6200",
+      "account_name": "Software Subscriptions (SaaS)",
+      "confidence": "high",
+      "notes": "Adobe Creative Cloud subscription"
+    },
+    {
+      "vendor_pattern": "FRAME.IO",
+      "account_number": "6200",
+      "account_name": "Software Subscriptions (SaaS)",
+      "confidence": "high",
+      "notes": "Frame.io collaboration platform subscription"
+    },
+    {
+      "vendor_pattern": "DROPBOX",
+      "account_number": "6200",
+      "account_name": "Software Subscriptions (SaaS)",
+      "confidence": "high",
+      "notes": "Dropbox cloud storage subscription"
+    },
+    {
+      "vendor_pattern": "GOOGLE WORKSPACE",
+      "account_number": "6200",
+      "account_name": "Software Subscriptions (SaaS)",
+      "confidence": "high",
+      "notes": "Google Workspace subscription"
+    },
+    {
+      "vendor_pattern": "QUICKBOOKS",
+      "account_number": "6400",
+      "account_name": "Legal & Professional Fees",
+      "confidence": "high",
+      "notes": "QuickBooks accounting software subscription"
+    },
+    {
+      "vendor_pattern": "STRIPE PAYOUT",
+      "account_number": "1210",
+      "account_name": "Stripe Clearing Account",
+      "confidence": "high",
+      "notes": "Stripe net payout deposit"
+    },
+    {
+      "vendor_pattern": "STRIPE TRANSFER",
+      "account_number": "1210",
+      "account_name": "Stripe Clearing Account",
+      "confidence": "high",
+      "notes": "Stripe net payout deposit"
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+title: "Bookkeeping Automation Pipeline"
+tagline: "7-agent system that turns raw bank exports and intake transcripts into QuickBooks-ready financials"
+category: "Finance"
+tech_stack: [Claude, Python, Google Drive API, QuickBooks, MCP]
+complexity: "High"
+status: "Live"
+demo_url: ""
+github_url: "https://github.com/Rakuff4877/raphsimonss"
+cover_image_url: ""
+
+problem: |
+  Bookkeeping for small businesses involves the same manual work every month: transcribing client
+  intake meetings into account structures, downloading CSVs from five different sources, cleaning
+  cryptic bank descriptions, categorizing hundreds of transactions, and preparing import files for
+  QuickBooks. Each step requires domain knowledge and takes hours. Errors in early steps (like a
+  wrong Chart of Accounts) cascade through the entire month's work.
+
+solution: |
+  A pipeline of 7 specialized AI agents — each owning one stage of the bookkeeping workflow — that
+  runs end-to-end from a new client intake meeting through to a QuickBooks-ready journal entry file.
+  Each agent receives structured inputs, applies domain-specific reasoning, and passes clean outputs
+  to the next stage. Claude Code orchestrates the pipeline; Python scripts handle data
+  transformation; Google Drive (via MCP) is the shared document store across all agents.
+
+architecture: |
+  Agent 0 — Onboarding: Creates the full Google Drive folder structure for a new client (15 folders,
+  organized by workflow stage) and writes a client config JSON with all folder IDs.
+
+  Agent 1 — Intake Analysis: Reads a Zoom transcript from a client intake meeting and extracts
+  business type, revenue streams, payment processors, staffing, and balance sheet items into a
+  structured JSON. Also selects the right COA template from 8 industry options and flags
+  complications (e.g. Stripe clearing accounts, S-Corp equity treatment, multi-entity situations).
+  Model: claude-opus-4-7 (complex reasoning).
+
+  Agent 2 — COA Builder: Takes the intake JSON and a base industry COA template, then produces a
+  fully customized 50–80 account Chart of Accounts as a QuickBooks-importable CSV. Adds
+  processor clearing accounts, revenue sub-accounts, COGS lines, and client-specific liability
+  accounts. Model: claude-opus-4-7.
+
+  Agent 3 — Bank Feed: Normalizes raw transaction CSVs from any source (bank, credit card, Stripe,
+  PayPal, Shopify) into a unified schema. Auto-detects format from column headers. Flags internal
+  transfers and duplicates. Optional --enrich flag uses Claude to clean cryptic descriptions into
+  human-readable vendor names. Outputs two files: normalized_transactions.csv and a
+  QB-ready bank feed CSV. Model: claude-sonnet-4-6.
+
+  Agent 4 — Categorization: Assigns a COA account number and confidence level (high/medium/low)
+  to every transaction using the client's customized COA and vendor rules. Low-confidence and
+  ambiguous transactions are split into a separate review_required.csv. Model: claude-sonnet-4-6.
+
+  Agent 5 — Reconciliation: Matches categorized transactions against bank statements to surface
+  discrepancies (in progress).
+
+  Agent 6 — Review: Processes the review queue, refines categorizations, and updates vendor_rules.json
+  so the same vendor is auto-categorized correctly in future months (in progress).
+
+  Agent 7 — Journal Entries: Converts approved categorized transactions into double-entry journal
+  entries and formats them for QuickBooks import (in progress).
+
+  All agents share a single run.py CLI entry point. Client configs live in
+  config/clients/{slug}.json. The active client is set with --set-client before running any agent.
+  Google Drive I/O is handled exclusively through MCP tool calls — no direct API credentials in
+  the Python scripts.
+
+results: |
+  - Client onboarding (folder structure + COA) reduced from a multi-hour manual process to a
+    single pipeline run
+  - Bank feed normalization handles 5 source formats automatically with zero manual column mapping
+  - Transaction categorization achieves high-confidence classification on ~80% of transactions;
+    the remainder are routed to a human review queue rather than silently misfiled
+  - Vendor rules persist across months — a vendor categorized once is auto-categorized forever
+  - Each agent is independently runnable and testable; a failure in one stage does not corrupt
+    earlier outputs
